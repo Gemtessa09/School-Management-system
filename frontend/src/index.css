@@ -1,0 +1,202 @@
+
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+:root {
+  --color-bg: #1f1f38;
+  --color-bg-variant: #2c2c6c;
+  --color-primary: #4db5ff;
+  --color-primary-variant: rgba(77, 181, 255, 0.4);
+  --color-light: rgba(255, 255, 255, 0.6);
+  --color-text-dark: #000000;
+  --color-text-light: #ffffff;
+}
+
+/* ---------------------------
+   APP LAYOUT
+---------------------------- */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* full height */
+  background-color: #f9f9f9;
+}
+
+.main-content {
+  flex: 1; /* ensures footer stays at bottom */
+}
+
+/* ---------------------------
+   FOOTER
+---------------------------- */
+.footer {
+  background-color: var(--color-bg-variant);
+  color: var(--color-text-light);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 15px;
+  width: 100%;
+  margin-top: auto;
+}
+
+.footer a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.footer a:hover {
+  opacity: 0.8;
+}
+
+/* ---------------------------
+   FORM STYLES (Login, Register)
+---------------------------- */
+.register {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-bg);
+  background-size: cover;
+  color: var(--color-text-light);
+  padding: 20px;
+}
+
+.registerTitle {
+  font-size: 50px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--color-primary);
+}
+
+.registerForm {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.registerForm > label {
+  margin: 10px 0 5px;
+  font-weight: 500;
+  color: var(--color-text-light);
+}
+
+.registerInput {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: #ffffff;
+  color: var(--color-text-dark);
+  transition: box-shadow 0.3s ease;
+}
+
+.registerInput:focus {
+  outline: none;
+  box-shadow: 0 0 5px var(--color-primary);
+}
+
+.registerButton {
+  margin-top: 20px;
+  cursor: pointer;
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.registerButton:hover {
+  background-color: #007adf;
+}
+
+/* ---------------------------
+   RESPONSIVE DESIGN
+---------------------------- */
+@media screen and (max-width: 768px) {
+  .registerTitle {
+    font-size: 36px;
+  }
+
+  .registerForm {
+    padding: 20px;
+  }
+
+  .registerButton {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .register {
+    padding: 10px;
+  }
+
+  .registerInput {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .registerButton {
+    padding: 14px;
+  }
+
+  .footer {
+    font-size: 13px;
+    padding: 15px;
+  }
+}
+/* Footer Styles */
+.footer {
+  background-color: #0c1a32;
+  color: #ffffff;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 14px;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.footer-content p {
+  margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    font-size: 12px;
+  }
+}
+
+/* App container for sticky footer */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* full viewport height */
+}
+
+/* Main content area grows to fill space */
+.main-content {
+  flex: 1;
+}
