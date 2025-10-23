@@ -1,4 +1,6 @@
-
+/* ---------------------------
+   GLOBAL RESET & VARIABLES
+---------------------------- */
 * {
   font-family: 'Poppins', sans-serif;
   margin: 0;
@@ -28,28 +30,45 @@ a {
 /* ---------------------------
    APP LAYOUT
 ---------------------------- */
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
 .app-container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* full height */
+  min-height: 100vh;
   background-color: #f9f9f9;
 }
 
 .main-content {
-  flex: 1; /* ensures footer stays at bottom */
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* ensure content starts from top */
 }
 
 /* ---------------------------
    FOOTER
 ---------------------------- */
 .footer {
-  background-color: var(--color-bg-variant);
-  color: var(--color-text-light);
+  background-color: #0c1a32;
+  color: #ffffff;
   text-align: center;
-  padding: 20px 0;
-  font-size: 15px;
+  padding: 20px 10px;
+  font-size: 14px;
   width: 100%;
-  margin-top: auto;
+  margin-top: auto; /* pushes footer below content */
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.2);
+  position: relative; /* prevent it from floating */
+}
+
+.footer-content p {
+  margin: 6px 0;
 }
 
 .footer a {
@@ -65,7 +84,7 @@ a {
    FORM STYLES (Login, Register)
 ---------------------------- */
 .register {
-  min-height: 100vh;
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -77,7 +96,7 @@ a {
 }
 
 .registerTitle {
-  font-size: 50px;
+  font-size: 48px;
   margin-bottom: 20px;
   text-align: center;
   color: var(--color-primary);
@@ -137,6 +156,14 @@ a {
    RESPONSIVE DESIGN
 ---------------------------- */
 @media screen and (max-width: 768px) {
+  .app-container {
+    justify-content: flex-start; /* prevent centering on mobile */
+  }
+
+  .main-content {
+    justify-content: flex-start; /* keep content at top */
+  }
+
   .registerTitle {
     font-size: 36px;
   }
@@ -148,11 +175,18 @@ a {
   .registerButton {
     font-size: 15px;
   }
+
+  .footer {
+    font-size: 13px;
+    padding: 15px;
+    position: relative; /* ensure it stays under content */
+  }
 }
 
 @media screen and (max-width: 480px) {
   .register {
     padding: 10px;
+    min-height: 100vh;
   }
 
   .registerInput {
@@ -165,38 +199,8 @@ a {
   }
 
   .footer {
-    font-size: 13px;
-    padding: 15px;
-  }
-}
-/* Footer Styles */
-.footer {
-  background-color: #0c1a32;
-  color: #ffffff;
-  text-align: center;
-  padding: 15px 0;
-  font-size: 14px;
-  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.2);
-}
-
-.footer-content p {
-  margin: 5px 0;
-}
-
-@media (max-width: 768px) {
-  .footer {
     font-size: 12px;
+    padding: 14px 10px;
+    position: relative;
   }
-}
-
-/* App container for sticky footer */
-.app-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* full viewport height */
-}
-
-/* Main content area grows to fill space */
-.main-content {
-  flex: 1;
 }

@@ -16,19 +16,16 @@ const App = () => {
   return (
     <Router>
       <div className="app-container">
-        <div className="main-content">
+        <main className="main-content">
           {currentRole === null &&
             <Routes>
               <Route path="/" element={<Homepage />} />
               <Route path="/choose" element={<ChooseUser visitor="normal" />} />
               <Route path="/chooseasguest" element={<ChooseUser visitor="guest" />} />
-
               <Route path="/Adminlogin" element={<LoginPage role="Admin" />} />
               <Route path="/Studentlogin" element={<LoginPage role="Student" />} />
               <Route path="/Teacherlogin" element={<LoginPage role="Teacher" />} />
-
               <Route path="/Adminregister" element={<AdminRegisterPage />} />
-
               <Route path='*' element={<Navigate to="/" />} />
             </Routes>
           }
@@ -36,13 +33,12 @@ const App = () => {
           {currentRole === "Admin" && <AdminDashboard />}
           {currentRole === "Student" && <StudentDashboard />}
           {currentRole === "Teacher" && <TeacherDashboard />}
-        </div>
+        </main>
 
-        {/* Footer always at bottom */}
         <Footer />
       </div>
     </Router>
   )
 }
 
-export default App
+export default App;
